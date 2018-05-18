@@ -14,11 +14,11 @@
   </welcome-file-list>
   <servlet>
         <servlet-name>ControllerServlet</servlet-name>
-        <servlet-class>C:\Users\欣儀\Desktop\case study\EmployeeDetail\src\Employee\ControllerServlet</servlet-class>
+        <servlet-class>C:\Users\欣儀\Desktop\case study\EmployeeDetail\src\Employee\ControllerServlet.java</servlet-class>
     </servlet>
  
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/new</url-pattern>
     </servlet-mapping>
 </web-app>
