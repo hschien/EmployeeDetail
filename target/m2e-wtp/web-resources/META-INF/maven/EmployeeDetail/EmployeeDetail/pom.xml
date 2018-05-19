@@ -4,6 +4,8 @@
   <artifactId>EmployeeDetail</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <name>Employee Detail Webapp</name>
+  <url>http://maven.apache.org</url>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -25,6 +27,17 @@
     </plugins>
   </build>
   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  	<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>6.2.0.jre7</version>
+	</dependency>
   	<dependency>
   		<groupId>javax.servlet</groupId>
   		<artifactId>javax.servlet-api</artifactId>

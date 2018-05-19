@@ -8,13 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<center>
+	<center>
         <h1>Employees Management</h1>
         <h2>
             <a href="/new">Add New Employee</a>
             &nbsp;&nbsp;&nbsp;
             <a href="/list">List All Employees</a>
-             
         </h2>
     </center>
     <div align="center">
@@ -26,18 +25,24 @@
         </c:if>
         <table border="1" cellpadding="5">
             <caption>
-                <h2>
                     <c:if test="${employee != null}">
-                        Edit Book
+                       <h2> Edit Book</h2>
                     </c:if>
                     <c:if test="${employee == null}">
-                        Add New Book
+                      <h2>   Add New Book</h2>
                     </c:if>
-                </h2>
             </caption>
                 <c:if test="${employee != null}">
                     <input type="hidden" name="id" value="<c:out value='${employee.id}' />" />
-                </c:if>           
+                </c:if> 
+            <tr>
+                <th>ID: </th>
+                <td>
+                    <input type="text" name="name" size="45"
+                            value="<c:out value='${employee.employeeid}' />"
+                        />
+                </td>
+            </tr>          
             <tr>
                 <th>Name: </th>
                 <td>
