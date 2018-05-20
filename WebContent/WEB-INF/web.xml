@@ -26,7 +26,7 @@
   </context-param>
   <servlet>
         <servlet-name>ControllerServlet</servlet-name>
-        <servlet-class>net.codejava.javaee.Employee.ControllerServlet</servlet-class>
+        <servlet-class>Employee.ControllerServlet</servlet-class>
     </servlet>
  
     <servlet-mapping>

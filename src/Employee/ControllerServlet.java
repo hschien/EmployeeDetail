@@ -31,15 +31,15 @@ public class ControllerServlet extends HttpServlet {
         String action = request.getServletPath();
  
         try {
-            if(action.equals("/Employee/new")) {
+            if(action.equals("/new")) {
             	showNewForm(request, response);
-            }else if(action.equals("/Employee/insert")) {
+            }else if(action.equals("/insert")) {
             	insertEmployee(request, response);
-            }else if(action.equals("/Employee/delete")) {
+            }else if(action.equals("/delete")) {
             	deleteEmployee(request, response);
-            }else if(action.equals("/Employee/edit")) {
+            }else if(action.equals("/edit")) {
             	showEditForm(request, response);
-            }else if(action.equals("/Employee/update")) {
+            }else if(action.equals("/update")) {
             	updateEmployee(request, response);
             }else {
             	listEmployee(request, response);

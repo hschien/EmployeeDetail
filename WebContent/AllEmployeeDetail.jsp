@@ -11,7 +11,7 @@
 	<center>
 	<h1>All Employee Detail</h1>
 	<h2>
-	        <a href="/new">Add New Employees</a>
+	        <a href="/MVNT.Test/new">Add New Employees</a>
             &nbsp;&nbsp;&nbsp;
             <a href="/list">List All Employees</a>
             &nbsp;&nbsp;&nbsp;
@@ -24,7 +24,7 @@
         <table border="1" cellpadding="5">
             <caption>List of Employees</caption>
             <tr>
-            	<th><a href="/edit?id=<c:out value='${employee.id}' />">EmployeeID</a></th>
+            	<th>EmployeeID</th>
             	<th>Name</th>
                 <th>Designation</th>
                 <th>Salary</th>
@@ -33,7 +33,9 @@
             </tr>
             <c:forEach var="employee" items="${listEmployee}">
                 <tr>
-                    <td><c:out value="${employee.employeeid}" /></td>
+                    <td><a href="/edit?id=<c:out value='${employee.id}' />">
+                    	<c:out value="${employee.employeeid}" /></a>
+                    </td>
                     <td><c:out value="${employee.name}" /></td>
                     <td><c:out value="${employee.designation}" /></td>
                     <td><c:out value="${employee.salary}" /></td>
