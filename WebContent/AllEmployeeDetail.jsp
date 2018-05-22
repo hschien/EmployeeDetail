@@ -11,7 +11,7 @@
 	<center>
 	<h1>All Employee Detail</h1>
 	<h2>
-	        <a href="/MVNT.Test/new">Add New Employees</a>
+	        <a href="/new">Add New Employees</a>
             &nbsp;&nbsp;&nbsp;
             <a href="/list">List All Employees</a>
             &nbsp;&nbsp;&nbsp;

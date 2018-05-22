@@ -13,16 +13,16 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
-  	<param-name>jdbcUrl</param-name>
-  	<param-value>jdbc:sqlserver://localhost:1433</param-value>
+  	<param-name>jdbcurl</param-name>
+  	<param-value>jdbc:sqlserver://localhost:1433;DatabaseName=EmployeeDetail</param-value>
   </context-param>
   <context-param>
   	<param-name>jdbcName</param-name>
-  	<param-value>root</param-value>
+  	<param-value>Hsin</param-value>
   </context-param>
   <context-param>
   	<param-name>jdbcPwd</param-name>
-  	<param-value>P@ssw0rd</param-value>
+  	<param-value>1415996</param-value>
   </context-param>
   <servlet>
         <servlet-name>ControllerServlet</servlet-name>

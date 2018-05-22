@@ -17,12 +17,7 @@
         </h2>
     </center>
     <div align="center">
-        <c:if test="${employee != null}">
-            <form action="update" method="post">
-        </c:if>
-        <c:if test="${employee == null}">
-            <form action="insert" method="post">
-        </c:if>
+        <form action="insert" method="post">
         <table border="1" cellpadding="5">
             <caption>
                     <c:if test="${employee != null}">
@@ -35,10 +30,11 @@
                 <c:if test="${employee != null}">
                     <input type="hidden" name="id" value="<c:out value='${employee.id}' />" />
                 </c:if> 
+            
             <tr>
                 <th>ID: </th>
                 <td>
-                    <input type="text" name="name" size="45"
+                    <input type="text" name="employeeid" size="45"
                             value="<c:out value='${employee.employeeid}' />"
                         />
                 </td>
@@ -77,7 +73,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Save" />
+                    <a href="/insert"><input type="submit" value="Save" /></a>
                 </td>
             </tr>
         </table>

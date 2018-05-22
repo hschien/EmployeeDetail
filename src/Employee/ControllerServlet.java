@@ -17,7 +17,7 @@ public class ControllerServlet extends HttpServlet {
     public void init() {
     	String name = getServletContext().getInitParameter("jdbcName");
 		String pwd = getServletContext().getInitParameter("jdbcPwd");
-		String url = getServletContext().getInitParameter("jdbcUrl");
+		String url = getServletContext().getInitParameter("jdbcurl");
     	employeeDAO = new EmployeeDAO(name, pwd, url);
     }
     
@@ -29,6 +29,7 @@ public class ControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
+        System.out.print("doget");
  
         try {
             if(action.equals("/new")) {
@@ -51,6 +52,7 @@ public class ControllerServlet extends HttpServlet {
     
     private void listEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
+    	System.out.print("listEmployee method");
         List<Employee> listEmployee = employeeDAO.listAllEmployees();
         request.setAttribute("listEmployees", listEmployee);
         RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeList.jsp");
