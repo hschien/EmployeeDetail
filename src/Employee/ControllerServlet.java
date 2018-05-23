@@ -55,7 +55,7 @@ public class ControllerServlet extends HttpServlet {
     	System.out.print("listEmployee method");
         List<Employee> listEmployee = employeeDAO.listAllEmployees();
         request.setAttribute("listEmployees", listEmployee);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeList.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("AllEmployeeDetail.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -67,7 +67,7 @@ public class ControllerServlet extends HttpServlet {
     
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("employeeid"));
         Employee existingEmployee = employeeDAO.getEmployee(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeForm.jsp");
         request.setAttribute("employee", existingEmployee);
@@ -84,29 +84,28 @@ public class ControllerServlet extends HttpServlet {
  
         Employee newEmployee = new Employee(employeeid, name, designation, salary, email);
         employeeDAO.insertEmployee(newEmployee);
-        response.sendRedirect("list");
+        response.sendRedirect("/list");
     }
     
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
         int employeeid = Integer.parseInt(request.getParameter("employeeid"));
         String name = request.getParameter("name");
         String designation = request.getParameter("designation");
         int salary = Integer.parseInt(request.getParameter("salary"));
         String email = request.getParameter("email");
  
-        Employee employee = new Employee(id, employeeid, name, designation, salary, email);
+        Employee employee = new Employee(employeeid, name, designation, salary, email);
         employeeDAO.updateEmployee(employee);
-        response.sendRedirect("list");
+        response.sendRedirect("/list");
     }
     
     private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("employeeid"));
  
         Employee employee = new Employee(id);
         employeeDAO.deleteEmployee(employee);
-        response.sendRedirect("list");
+        response.sendRedirect("/list");
     }
 }

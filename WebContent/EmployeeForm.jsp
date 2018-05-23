@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
-<title>Insert title here</title>
+<title>Add/Edit Page</title>
 </head>
 <body>
 	<center>
@@ -17,58 +17,38 @@
         </h2>
     </center>
     <div align="center">
-        <form action="insert" method="post">
+       *** <form action="insert" method="post">***
         <table border="1" cellpadding="5">
             <caption>
-                    <c:if test="${employee != null}">
-                       <h2> Edit Book</h2>
-                    </c:if>
-                    <c:if test="${employee == null}">
-                      <h2>   Add New Book</h2>
-                    </c:if>
-            </caption>
-                <c:if test="${employee != null}">
-                    <input type="hidden" name="id" value="<c:out value='${employee.id}' />" />
-                </c:if> 
-            
+            	<c:if test="${employee == null}">  <h2>Add New Book</h2>
             <tr>
                 <th>ID: </th>
                 <td>
-                    <input type="text" name="employeeid" size="45"
-                            value="<c:out value='${employee.employeeid}' />"
-                        />
+                    <input type="text" name="employeeid" size="45"/>
                 </td>
             </tr>          
             <tr>
                 <th>Name: </th>
                 <td>
-                    <input type="text" name="name" size="45"
-                            value="<c:out value='${employee.name}' />"
-                        />
+                    <input type="text" name="name" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>Designation: </th>
                 <td>
-                    <input type="text" name="designation" size="45"
-                            value="<c:out value='${employee.designation}' />"
-                    />
+                    <input type="text" name="designation" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>Salary: </th>
                 <td>
-                    <input type="text" name="salary" size="45"
-                            value="<c:out value='${employee.price}' />"
-                    />
+                    <input type="text" name="salary" size="45"/>
                 </td>
             </tr>
             <tr>
                 <th>Email: </th>
                 <td>
-                    <input type="text" name="email" size="45"
-                            value="<c:out value='${employee.email}' />"
-                    />
+                    <input type="text" name="email" size="45"/>
                 </td>
             </tr>
             <tr>
@@ -76,8 +56,60 @@
                     <a href="/insert"><input type="submit" value="Save" /></a>
                 </td>
             </tr>
+            </c:if>
+            </caption>
         </table>
         </form>
+        
+        *** <form action="insert" method="post">***
+        <table border="1" cellpadding="5">
+            <caption>
+               <c:if test="${employee != null}">  <h2> Edit Book</h2>
+            <tr>
+                <th>ID: </th>
+                <td>
+                    <input type="text" name="employeeid" size="45"
+                            value="<c:out value='${employee.employeeid}' />"/>
+                </td>
+            </tr>          
+            <tr>
+                <th>Name: </th>
+                <td>
+                    <input type="text" name="name" size="45"
+                            value="<c:out value='${employee.name}' />"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Designation: </th>
+                <td>
+                    <input type="text" name="designation" size="45"
+                            value="<c:out value='${employee.designation}' />"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Salary: </th>
+                <td>
+                    <input type="text" name="salary" size="45"
+                            value="<c:out value='${employee.price}' />"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <td>
+                    <input type="text" name="email" size="45"
+                            value="<c:out value='${employee.email}' />"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/insert"><input type="submit" value="Save" /></a>
+                </td>
+            </tr>
+            </c:if>
+            </caption>
+        </table>
+        </form>
+        
     </div>   
 </body>
 </html>

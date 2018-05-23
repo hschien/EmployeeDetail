@@ -33,7 +33,7 @@
             </tr>
             <c:forEach var="employee" items="${listEmployee}">
                 <tr>
-                    <td><a href="/edit?id=<c:out value='${employee.id}' />">
+                    <td><a href="/edit">
                     	<c:out value="${employee.employeeid}" /></a>
                     </td>
                     <td><c:out value="${employee.name}" /></td>
@@ -41,7 +41,7 @@
                     <td><c:out value="${employee.salary}" /></td>
                     <td><c:out value="${employee.email}" /></td>
                     <td>
-                        <a href="/delete?id=<c:out value='${employee.id}' />">Delete</a>                     
+                        <a href="/delete"><input type="submit" value="Delete" /></a> 
                     </td>
                 </tr>
             </c:forEach>

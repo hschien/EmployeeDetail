@@ -34,12 +34,12 @@ public class EmployeeDAO {
 		}
 	}
 	public boolean insertEmployee(Employee employee) throws SQLException{
-		String sql="INSERT INTO dbo.EmployeeDetail (id, name, designation, salary, email) VALUES (?, ?, ?, ?, ?)";
+		String sql="INSERT INTO dbo.EmployeeDetail (employeeid, name, designation, salary, email) VALUES (?, ?, ?, ?, ?)";
 		
 		connect();
 		
 		PreparedStatement statement=connDB.prepareStatement(sql);
-		statement.setInt(1, employee.getId());
+		statement.setInt(1, employee.getEmployeeId());
         statement.setString(2, employee.getName());
         statement.setString(3, employee.getDesignation());
         statement.setInt(4, employee.getSalary());
@@ -61,7 +61,7 @@ public class EmployeeDAO {
 		ResultSet resultSet=statement.executeQuery(sql);
 		
 		while(resultSet.next()) {
-			int id=resultSet.getInt("id");
+			int id=resultSet.getInt("employeeid");
 			String name=resultSet.getString("name");
 			String designation=resultSet.getString("designation");
 			int salary=resultSet.getInt("salary");
@@ -77,12 +77,12 @@ public class EmployeeDAO {
 	}
 	
 	public boolean deleteEmployee(Employee employee) throws SQLException{
-		String sql="DELETE FROM dbo.EmployeeDetail where employee_id=?";
+		String sql="DELETE FROM dbo.EmployeeDetail where employeeid=?";
 		
 		connect();
 		
 		PreparedStatement statement=connDB.prepareStatement(sql);
-		statement.setInt(1, employee.getId());
+		statement.setInt(1, employee.getEmployeeId());
 		
 		boolean rowDeleted=statement.executeUpdate()>0;
 		statement.close();
@@ -91,17 +91,16 @@ public class EmployeeDAO {
 	}
 	
 	public boolean updateEmployee(Employee employee) throws SQLException{
-		String sql="UPDATE dbo.EmployeeDetail SET employeeid=?,name=?,designation=?,salary=?,email=?";
-		sql+=" WHERE employee_id=?";
+		String sql="UPDATE dbo.EmployeeDetail SET name=?,designation=?,salary=?,email=?";
+		sql+=" WHERE employeeid=?";
 		connect();
 		
 		PreparedStatement statement=connDB.prepareStatement(sql);
-		statement.setInt(1, employee.getEmployeeId());
-		statement.setString(2, employee.getName());
-        statement.setString(3, employee.getDesignation());
-        statement.setInt(4, employee.getSalary());
-        statement.setString(5, employee.getEmail());
-        statement.setInt(6, employee.getId());
+		statement.setString(1, employee.getName());
+        statement.setString(2, employee.getDesignation());
+        statement.setInt(3, employee.getSalary());
+        statement.setString(4, employee.getEmail());
+        statement.setInt(5, employee.getEmployeeId());
         
         boolean rowUpdated = statement.executeUpdate() > 0;
         statement.close();
@@ -111,7 +110,7 @@ public class EmployeeDAO {
 	
 	public Employee getEmployee(int id) throws SQLException {
 		Employee employee = null;
-        String sql = "SELECT * FROM dbo.EmployeeDetail WHERE employee_id = ?";
+        String sql = "SELECT * FROM dbo.EmployeeDetail WHERE employeeid = ?";
          
         connect();
          

@@ -14,11 +14,11 @@
   </welcome-file-list>
   <context-param>
   	<param-name>jdbcurl</param-name>
-  	<param-value>jdbc:sqlserver://localhost:1433;DatabaseName=EmployeeDetail</param-value>
+  	<param-value>jdbc:sqlserver://localhost:1433</param-value>
   </context-param>
   <context-param>
   	<param-name>jdbcName</param-name>
-  	<param-value>Hsin</param-value>
+  	<param-value>hsinchien</param-value>
   </context-param>
   <context-param>
   	<param-name>jdbcPwd</param-name>

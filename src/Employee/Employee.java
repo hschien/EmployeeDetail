@@ -1,7 +1,6 @@
 package Employee;
 
 public class Employee {
-	protected int id;
 	protected int employeeid;
 	protected String name;
 	protected String designation;
@@ -12,28 +11,21 @@ public class Employee {
 		
 	}
 	
-	public Employee(int id) {
-		this.id=id;
+	public Employee(int employeeid) {
+		this.employeeid=employeeid;
 	}
 	
-	public Employee(int id, int employeeid, String name,String designation,int salary,String email) {
-		this(employeeid, name, designation, salary, email);
-		this.id=id;
-	}
 	
 	public Employee(int employeeid, String name,String designation,int salary,String email) {
+		this(name, designation, salary, email);
 		this.employeeid=employeeid;
+	}
+	
+	public Employee(String name,String designation,int salary,String email) {
 		this.name=name;
 		this.designation=designation;
 		this.salary=salary;
 		this.email=email;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id=id;
 	}
 	
 	public int getEmployeeId() {
