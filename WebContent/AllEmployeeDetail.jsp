@@ -11,13 +11,13 @@
 	<center>
 	<h1>All Employee Detail</h1>
 	<h2>
-	        <a href="/new">Add New Employees</a>
+	        <a href="new">Add New Employees</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="/list">List All Employees</a>
+            <a href="list">List All Employees</a>
             &nbsp;&nbsp;&nbsp;
             Export to Excel
             &nbsp;&nbsp;&nbsp;
-            <a href="http://localhost:8080/EmployeeDetail/HomePage.html">Return to HomePage</a>
+            <a href="homepage">Return to HomePage</a>
     </h2>
 	</center>
 	<div align="center">
@@ -31,9 +31,9 @@
                 <th>Email</th>
                 <th>Actions</th>
             </tr>
-            <c:forEach var="employee" items="${listEmployee}">
+            <c:forEach var="employee" items="${EmployeeDetail}">
                 <tr>
-                    <td><a href="/edit">
+                    <td><a href="edit">
                     	<c:out value="${employee.employeeid}" /></a>
                     </td>
                     <td><c:out value="${employee.name}" /></td>
@@ -41,7 +41,7 @@
                     <td><c:out value="${employee.salary}" /></td>
                     <td><c:out value="${employee.email}" /></td>
                     <td>
-                        <a href="/delete"><input type="submit" value="Delete" /></a> 
+                        <a href="delete"><input type="submit" value="Delete" /></a> 
                     </td>
                 </tr>
             </c:forEach>

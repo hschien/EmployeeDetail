@@ -11,9 +11,9 @@
 	<center>
         <h1>Employees Management</h1>
         <h2>
-            <a href="/new">Add New Employee</a>
+            <a href="new">Add New Employee</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="/list">List All Employees</a>
+            <a href="list">List All Employees</a>
         </h2>
     </center>
     <div align="center">
@@ -53,7 +53,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href="/insert"><input type="submit" value="Save" /></a>
+                    <input type="submit" value="Save" />
                 </td>
             </tr>
             </c:if>
@@ -102,7 +102,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <a href="/insert"><input type="submit" value="Save" /></a>
+                   <input type="submit" value="Save" />
                 </td>
             </tr>
             </c:if>

@@ -34,7 +34,7 @@ public class EmployeeDAO {
 		}
 	}
 	public boolean insertEmployee(Employee employee) throws SQLException{
-		String sql="INSERT INTO dbo.EmployeeDetail (employeeid, name, designation, salary, email) VALUES (?, ?, ?, ?, ?)";
+		String sql="INSERT INTO EmployeeDetail.dbo.EmployeeDetail (employeeid, name, designation, salary, email) VALUES (?, ?, ?, ?, ?)";
 		
 		connect();
 		
@@ -53,7 +53,7 @@ public class EmployeeDAO {
 	
 	public List<Employee> listAllEmployees() throws SQLException{
 		List<Employee> listEmployee=new ArrayList<>();
-		String sql="SELECT * FROM dbo.EmployeeDetail";
+		String sql="SELECT * FROM EmployeeDetail.dbo.EmployeeDetail";
 		
 		connect();
 		
@@ -77,7 +77,7 @@ public class EmployeeDAO {
 	}
 	
 	public boolean deleteEmployee(Employee employee) throws SQLException{
-		String sql="DELETE FROM dbo.EmployeeDetail where employeeid=?";
+		String sql="DELETE FROM EmployeeDetail.dbo.EmployeeDetail where employeeid=?";
 		
 		connect();
 		
@@ -91,7 +91,7 @@ public class EmployeeDAO {
 	}
 	
 	public boolean updateEmployee(Employee employee) throws SQLException{
-		String sql="UPDATE dbo.EmployeeDetail SET name=?,designation=?,salary=?,email=?";
+		String sql="UPDATE EmployeeDetail.dbo.EmployeeDetail SET name=?,designation=?,salary=?,email=?";
 		sql+=" WHERE employeeid=?";
 		connect();
 		
@@ -110,7 +110,7 @@ public class EmployeeDAO {
 	
 	public Employee getEmployee(int id) throws SQLException {
 		Employee employee = null;
-        String sql = "SELECT * FROM dbo.EmployeeDetail WHERE employeeid = ?";
+        String sql = "SELECT * FROM EmployeeDetail.dbo.EmployeeDetail WHERE employeeid = ?";
          
         connect();
          
